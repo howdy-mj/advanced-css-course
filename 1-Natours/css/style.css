@@ -29,7 +29,47 @@ body {
     url('../img/hero.jpg'); /* 초록색이 위에 있어야해서 첫번째, 그라데이션 방향*/
   background-size: cover; /* width에 따라 채워지는 것*/
   background-position: top; /* 화면이 작아지더라도, 그림 top은 고정*/
+  position: relative;
 
   /* 사진 자르는 용도인데, 왼쪽 상단 모서리부터 시계방향으로 작업히며 첫번째 꼭지점에서 얼마나 떨어져있는가*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%; /* 해당 div의 제일 왼쪽이 left에서 50% 떨어진 것*/
+  transform: translate(
+    -50%,
+    -50%
+  ); /* 해당 요소에서 위, 왼쪽다 50% 씩 땡기는 것*/
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
 }
