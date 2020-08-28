@@ -6,3 +6,30 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* 폰트는 항상 body에 두는 것이 적합, inherit */
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, #7ed56fac, #28b485ba),
+    url('../img/hero.jpg'); /* 초록색이 위에 있어야해서 첫번째, 그라데이션 방향*/
+  background-size: cover; /* width에 따라 채워지는 것*/
+  background-position: top; /* 화면이 작아지더라도, 그림 top은 고정*/
+
+  /* 사진 자르는 용도인데, 왼쪽 상단 모서리부터 시계방향으로 작업히며 첫번째 꼭지점에서 얼마나 떨어져있는가*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
