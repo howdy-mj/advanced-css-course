@@ -121,6 +121,17 @@ body {
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -129,6 +140,12 @@ body {
   display: inline-block; /* button은 기본적으로 inline이라, padding, margin을 넣어주려면 inline-block*/
   border-radius: 100px;
   transition: all 0.2s; /* 시작하는 요소에 해당 요소를 넣어야 함*/
+  position: relative;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards; /* 애니메이션 시작 늦추는 것*/
 }
 
 .btn:hover {
@@ -145,4 +162,26 @@ body {
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+.btn::after {
+  content: ''; /* after를 쓰려면 필수로 적어야 함 */
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute; /* 원래는 header에 종속되어야 하지만, .btn에 relative를 넣음*/
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6); /* 크기 몇 배로 키우기*/
+  opacity: 0;
 }
