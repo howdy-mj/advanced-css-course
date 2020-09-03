@@ -18,9 +18,9 @@
     height: 95vh;
   }
 
-  @media (min-resolution: 192dpi) and (min-width: 37.5em),
-    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
-    (min-width: 125em) {
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and(-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    only screen and(min-width: 125em) {
     // 600px / 16 = 37.5, 2000 / 16 = 125
     //  해상도가 192보다 높거나, 600px보다 width가 크다면 더 큰 이미지 적용
     background-image: linear-gradient(
