@@ -26,11 +26,18 @@
   background-color: var(--color-grey-dark-1);
 
   flex: 0 0 18%;
+
+  display: flex; // 위 아래로 나누기 위해
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hotel-view {
   background-color: #fff;
+
+  // test
   background-color: orangered;
+  height: 100rem;
 
   flex: 1; // 나머지 부분 다 차지
 }
