@@ -8,3 +8,10 @@ Udemy - Advanced CSS and Sass: Flexbox, Grid, Animations and More!
 - CSS, SCSS
 - 레이아웃
 - 반응형(이미지 화소 포함)
+
+`2-Trillo`
+
+- SCSS
+- 레이아웃 / 반응형
+- Flexbox
+- SVG
