@@ -1,5 +1,33 @@
 .features {
-  background-color: $color-grey-light-2;
-
   grid-column: center-start / center-end;
+
+  margin: 15rem 0;
+
+  display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(25rem, 1fr)
+  ); // 반응형, 최소 25rem 유지, 안되면 자동 줄바꿈
+  grid-gap: 6rem;
+  align-items: start; // 상세내용 줄 맞춤
+}
+
+// 재사용하기 위해 따로 빼둠
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr; // 아이콘 사이즈에 따라 자동으로 바뀌게
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2; // -1을 쓰려면 explicit에서만 해당하는데, 이는 grid-template-rows 설정 필요
+    transform: translateY(-1rem); // 살짝 위로 올리기
+  }
+  &__text {
+    font-size: 1.7rem;
+  }
 }
