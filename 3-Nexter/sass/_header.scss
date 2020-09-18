@@ -12,10 +12,21 @@
   padding-top: 4rem;
 
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr; // logo와 다른 것 분리
-  grid-template-columns: max-content; // 가장 큰것에 width 맞추기
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr; // logo와 다른 것 분리
+  grid-template-columns: minmax(
+    min-content,
+    max-content
+  ); // 반응형 고려, 가장 큰것에 width 맞추기
   grid-row-gap: 1.5rem; // 밑의 gap
   justify-content: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 5rem;
+  }
 
   &__logo {
     height: 3rem;
@@ -50,9 +61,11 @@
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 3rem;
     justify-items: center;
+    align-items: center; // 줄였을 때 가운데
 
     img {
-      height: 2.5rem;
+      max-height: 2.5rem;
+      max-width: 100%;
       filter: brightness(70%);
     }
   }
