@@ -3,4 +3,33 @@
 
   grid-column: sidebar-start / sidebar-end; // 거의 column을 기준으로 스타일링
   grid-row: 1 / -1; // 처음부터 끝까지
+
+  display: flex;
+  justify-content: center; //
+}
+
+.nav-btn {
+  border: none;
+  border-radius: 0;
+
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 4rem;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+  }
+
+  &::before {
+    transform: translateY(-1.5rem);
+  }
+  &::after {
+    transform: translateY(1.3rem);
+  }
 }
